@@ -33,4 +33,22 @@ void moveZeroes(int* nums, int numsSize){
 }
 
 
+//思路二: 交换非零和零
+
+void moveZeroes(int* nums, int numsSize){
+	int n = 0,temp; 
+	for (int i = 0; i < numsSize; i++){
+		// 非零
+		if (nums[i]){
+			if (n != i){
+				temp = nums[i];
+				nums[i] = nums[n];
+				nums[n] = temp;
+			} 
+			n++;
+		}
+	}
+}
+
+
 
