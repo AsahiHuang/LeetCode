@@ -20,15 +20,13 @@
 //投票算法的应用
 
 int majorityElement(int* nums, int numsSize){
-	int count = 1, res = nums[0];
-	int i = 1;
+	int i,res,count;
+	i = count = 0;
 
-	while (i < numsSize - 1){
-		count += (nums[i] == res ? 1:-1);
-		if (!count){
-			res = nums[++i];
-			count = 1;
-		}
+	while (i < numsSize){
+		if (!count)
+			res = nums[i];
+		count += (res == nums[i] ? 1:-1);
 		i++;
 	}
 	return res;
